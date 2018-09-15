@@ -1,23 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Grid from '@material-ui/core/Grid/Grid';
-import Card from '@material-ui/core/Card/Card';
-import { CardContent, CardActions} from '@material-ui/core';
-import Button from '@material-ui/core/Button/Button';
-import Check from '@material-ui/icons/Check';
-import Typography from '@material-ui/core/Typography/Typography';
-import Divider from '@material-ui/core/Divider/Divider';
+import { CardContent, CardActions, IconButton, Typography, Divider, Grid, Card } from '@material-ui/core';
+import CheckCircle from '@material-ui/icons/CheckCircle';
+import Green from '@material-ui/core/colors/green';
 
-const cardStyle = {
-    padding: 20,
-    margin: 20,
-    marginTop: 0,
-    marginBottom: 0,
+const cardStyle = {    
+    margin: "1%",
   };
-  
-const root = {
-  flexGrow: 1,
-}
 
 class Note extends Component {
 
@@ -34,20 +23,19 @@ class Note extends Component {
 
     render(props){
         return(
-            <div className = {root}>
-            <Grid container direction = "column" alignItems="strech" spacing = {8}>
+            <div>
+            <Grid container direction = "column">
               <Grid item xs>
                 <Card style = {cardStyle}>
                   <CardContent>
-                    <Typography variant="body1" color="textPrimary">
+                    <Typography variant="headline" color="textPrimary">
                         {this.noteContent}
                     </Typography>  
                   </CardContent>
                   <CardActions>
-                      <Button color="primary" variant="extendedFab" onClick={() => this.handleRemoveNote(this.noteId)}>
-                      DONE!
-                      <Check style={{marginLeft: 5,fontSize: 20,}}/>
-                      </Button>
+                      <IconButton onClick={() => this.handleRemoveNote(this.noteId)}>
+                      <CheckCircle />
+                      </IconButton>
                   </CardActions>
                 </Card>
               </Grid>
