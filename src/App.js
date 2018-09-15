@@ -60,19 +60,19 @@ class App extends Component {
   render() {
     return (
       <div className="notesWrapper">
-        {
-          this.state.notes.map((note) => {
-            return (
-              <Note 
-              noteContent={note.noteContent} 
-              noteId={note.id} 
-              key={note.id} 
-              removeNote ={this.removeNote}
-              />
-            )
-          })
-        }
-        <NoteForm addNote={this.addNote} />
+          {
+            this.state.notes.map((note) => {
+              return (
+                  <Note 
+                    noteContent={note.noteContent} 
+                    noteId={note.id} 
+                    key={note.id} 
+                    removeNote ={this.removeNote}
+                  />
+              )
+            })
+          }
+          <NoteForm addNote={this.addNote} />
       </div>
     );
   }
